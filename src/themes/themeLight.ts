@@ -1,4 +1,6 @@
-const themeLight = {
+import {IColors} from './index.ts';
+
+const themeLight: IColors = {
   backgroundPrimary: '#B83341',
   backgroundSecondary: '#E03F50',
   textLight: '#FFFFFF',

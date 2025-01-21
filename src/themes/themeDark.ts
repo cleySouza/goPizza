@@ -1,4 +1,6 @@
-const darkTheme = {
+import {IColors} from './index.ts';
+
+const darkTheme: IColors = {
   backgroundPrimary: '#000',
   backgroundSecondary: '#2f2e2e',
   textLight: '#FFFFFF',

@@ -1,10 +1,10 @@
 import {useAtom} from 'jotai';
-import {themeAtom, darkTheme, lightTheme} from '../themes';
+import {themeAtom, DarkTheme, LightTheme} from '../themes';
 
 function useTheme() {
   const [isLightTheme, setIsLightTheme] = useAtom(themeAtom);
 
-  const currentTheme = isLightTheme ? lightTheme : darkTheme;
+  const currentTheme = isLightTheme ? LightTheme : DarkTheme;
 
   const toggleTheme = () => setIsLightTheme(!isLightTheme);
 

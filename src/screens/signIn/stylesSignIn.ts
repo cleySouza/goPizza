@@ -6,8 +6,6 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#B83341',
-    // paddingHorizontal: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingHorizontal: 20,
   },
 });
