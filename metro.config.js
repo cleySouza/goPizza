@@ -1,8 +1,10 @@
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 
 const defaultConfig = getDefaultConfig(__dirname);
-defaultConfig.resolver = undefined;
-const {assetExts, sourceExts} = defaultConfig.resolver;
+
+// Verificar se a propriedade resolver existe antes de acessar assetExts e sourceExts
+const resolver = defaultConfig.resolver || {};
+const {assetExts = [], sourceExts = []} = resolver;
 
 /**
  * Metro configuration

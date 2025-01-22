@@ -1,19 +1,15 @@
 import React from 'react';
-import {Platform, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {Styles} from './stylesSignIn';
 import Brand from '../../assets/brand.svg';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {useTheme} from '../../hooks';
-import {Title} from '../../components/molecules';
+import {Input, Title} from '../../components/app';
+import {Label} from '../../components/app/label/label.tsx';
 
 function ScreenSignIn() {
   const {theme, toggleTheme} = useTheme();
-
-  const render =
-    Platform.OS === 'android'
-      ? 'DMSerifDisplay Regular'
-      : 'DMSerifDisplay-Regular';
 
   return (
     <View
@@ -23,47 +19,9 @@ function ScreenSignIn() {
       ]}>
       <Brand width={311} height={364} />
       <Title type="secondary" label="Login" theme={theme} />
-      <TextInput
-        placeholder="E-mail"
-        placeholderTextColor={theme.colors.textLight}
-        style={{
-          width: '100%',
-          padding: 20,
-          borderStyle: 'solid',
-          borderWidth: 1,
-          borderColor: theme.colors.hover,
-          borderRadius: 12,
-          fontSize: 14,
-          marginBottom: 10,
-          fontFamily: theme.fonts.dmSans,
-        }}
-      />
-      <TextInput
-        placeholder="Senha"
-        placeholderTextColor={theme.colors.textLight}
-        style={{
-          width: '100%',
-          padding: 20,
-          borderStyle: 'solid',
-          borderWidth: 1,
-          borderColor: theme.colors.hover,
-          borderRadius: 12,
-          fontSize: 14,
-          fontFamily: theme.fonts.dmSans,
-        }}
-      />
-      <Text
-        style={{
-          textAlign: 'right',
-          width: '100%',
-          color: theme.colors.textLight,
-          fontSize: 14,
-          marginTop: 20,
-          marginBottom: 20,
-          fontFamily: theme.fonts.dmSans,
-        }}>
-        Esqueci minha senha
-      </Text>
+      <Input theme={theme} placeholder="E-mail" />
+      <Input theme={theme} placeholder="Password" />
+      <Label type="helpPassword" label="Esqueci minha senha" theme={theme} />
       <TouchableOpacity
         style={{
           backgroundColor: theme.colors.backgroundSecondary,
@@ -72,15 +30,7 @@ function ScreenSignIn() {
           width: '100%',
           alignItems: 'center',
         }}>
-        <Text
-          style={{
-            color: theme.colors.textLight,
-            fontSize: 14,
-            fontWeight: 500,
-            fontFamily: theme.fonts.dmSans,
-          }}>
-          Entrar
-        </Text>
+        <Label type="secondary" label="Entrar" theme={theme} />
       </TouchableOpacity>
       <TouchableOpacity
         onPress={toggleTheme}
