@@ -17,7 +17,7 @@ function Styles({type, style, theme}: TitleProps) {
         type === 'default' ? theme?.fonts?.dmSans : theme.fonts.dmSerifDisplay,
       width: style?.width ? style.width : '100%',
       textAlign: style?.textAlign ? style.textAlign : 'left',
-      marginTop: type === 'default' ? style?.marginTop : 10,
+      marginTop: type === 'default' ? style?.marginTop : 20,
       marginBottom: type === 'default' ? style?.marginBottom : 20,
       ...style,
     },
