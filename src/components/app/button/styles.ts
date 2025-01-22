@@ -2,19 +2,32 @@ import {StyleSheet} from 'react-native';
 import {ITheme} from '../../../themes';
 
 function Styles(type: string, theme: ITheme) {
+  function backgroundType(type: string) {
+    switch (type) {
+      case 'primary':
+        return {
+          backgroundColor: theme.colors.backgroundPrimary,
+          borderRadius: 12,
+        };
+      case 'secondary':
+        return {
+          backgroundColor: theme.colors.backgroundSecondary,
+          borderRadius: 12,
+        };
+      case 'link':
+        return {backgroundColor: 'transparent'};
+      default:
+        return {backgroundColor: theme.colors.backgroundPrimary};
+    }
+  }
+
   return StyleSheet.create({
     button: {
-      backgroundColor:
-        type === 'default'
-          ? 'none'
-          : type === 'primary'
-          ? theme.colors.backgroundSecondary
-          : theme.colors.backgroundPrimary,
+      ...backgroundType(type),
       padding: type === 'link' ? 0 : 20,
       width: '100%',
       alignItems: type === 'link' ? 'flex-end' : 'center',
       justifyContent: 'center',
-      borderRadius: type === 'primary' ? 12 : 0,
       marginBottom: type === 'link' ? 20 : 0,
       marginTop: type === 'link' ? 5 : 0,
     },
